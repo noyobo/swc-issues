@@ -8,7 +8,7 @@
     "@swc/core": "^1.3.105"
   },
   "scripts": {
-    "build": "RUST_BACKTRACE=full node ./build.mjs"
+    "build": "RUST_BACKTRACE=1 node ./build.mjs"
   },
   "stackblitz": {
     "startCommand": "npm run build"
