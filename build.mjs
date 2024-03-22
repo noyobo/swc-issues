@@ -13,6 +13,8 @@ const cjs = await transform(code, {
   inputSourceMap: map,
   jsc: { target: 'es5' },
   module: { type: 'commonjs', strictMode: false },
+}).then(() => {
+  console.log('ok')
 }).catch((e) => {
   console.error('[esm2cjs]', e);
 });
