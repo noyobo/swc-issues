@@ -14,5 +14,8 @@
   },
   "stackblitz": {
     "startCommand": "npm run build"
+  },
+  "devDependencies": {
+    "esbuild": "^0.21.5"
   }
 }
