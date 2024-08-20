@@ -38,6 +38,7 @@ const swcResult2 = await transform(result.code, {
   filename: 'a.js',
   sourceMaps: true,
   inputSourceMap: result.map,
+  minify: true,
   module: { type: 'commonjs', strictMode: false },
 }).catch((e) => {
   /**
