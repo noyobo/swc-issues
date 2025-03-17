@@ -1,0 +1,12 @@
+{
+  "name": "chunk-bug",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "info": "npx -y swc-info@latest"
+  },
+  "dependencies": {
+    "@swc/core": "latest"
+  }
+}
