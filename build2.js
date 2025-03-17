@@ -21,7 +21,9 @@ function minifyLen(len, fn) {
         transform: {},
         minify: {
           mangle: true,
-          compress: true,
+          compress: {
+            defaults: false
+          },
         },
       },
       minify: true,
