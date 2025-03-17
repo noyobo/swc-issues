@@ -1,5 +1,4 @@
-import {transformSync} from "@swc/core";
-
+import { transformSync } from "@swc/core";
 
 function genCode2(len) {
   return `
@@ -22,20 +21,19 @@ function minifyLen(len, fn) {
         minify: {
           mangle: true,
           compress: {
-            defaults: false
+            defaults: false,
           },
         },
       },
       minify: true,
     });
-    console.log(fn.name, len, 'cost:', Date.now() - start, 'ms');
+    console.log(fn.name, len, "cost:", Date.now() - start, "ms");
   } catch (e) {
-    console.log(fn.name, len, 'error:', e);
+    console.log(fn.name, len, "error:", e);
   }
 }
 
-
-minifyLen(100, genCode2)
-minifyLen(1000, genCode2)
-minifyLen(2000, genCode2)
-minifyLen(3000, genCode2)
+minifyLen(100, genCode2);
+minifyLen(1000, genCode2);
+minifyLen(2000, genCode2);
+minifyLen(3000, genCode2);
