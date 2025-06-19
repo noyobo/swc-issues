@@ -1,7 +1,7 @@
 import { transformSync } from "@swc/core";
 
 function genCode4(len) {
-  const code = "${a}${b}${c}"
+  const code = "${a}${b}${c}";
   return `
     export function add(a, b, c) {
       return \`${code.repeat(len)}\`;

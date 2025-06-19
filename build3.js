@@ -1,12 +1,6 @@
 import { transformSync } from "@swc/core";
 
-function genCode3(len) {
-  return `
-    export function add(a, b, c) {
-      return ${"a + b + ".repeat(len)} c;
-    }
-  `;
-}
+import { genCode3 } from "./genCodes.js";
 
 function minifyLen(len, fn) {
   try {

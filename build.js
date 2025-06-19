@@ -1,12 +1,5 @@
 import { transformSync } from "@swc/core";
-
-function genCode(len) {
-  return `
-    export function add(a) {
-      return ${'a + "hello swc, minify" + '.repeat(len)} 'c'
-    }
-  `;
-}
+import { genCode } from "./genCodes.js";
 
 function minifyLen(len, fn) {
   try {

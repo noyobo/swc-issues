@@ -1,37 +1,5 @@
 import { buildSync } from "esbuild";
-
-function genCode(len) {
-  return `
-    export function add(a) {
-      return ${'a + "hello esbuild, minify" + '.repeat(len)} "c";
-    }
-  `;
-}
-
-function genCode2(len) {
-  return `
-    export function add() {
-      return ${'"a" + "hello swc, minify" + '.repeat(len)} "c"
-    }
-  `;
-}
-
-function genCode3(len) {
-  return `
-    export function add(a, b, c) {
-      return ${"a + b + ".repeat(len)} c;
-    }
-  `;
-}
-
-function genCode4(len) {
-  const code = "${a}${b}${c}"
-  return `
-    export function add(a, b, c) {
-      return \`${code.repeat(len)}\`;
-    }
-  `;
-}
+import { genCode, genCode2, genCode3, genCode4 } from "./genCodes.js";
 
 function minifyLen(len, fn) {
   try {
@@ -68,14 +36,14 @@ minifyLen(2000, genCode2);
 minifyLen(3000, genCode2);
 minifyLen(5000, genCode2);
 minifyLen(10000, genCode2);
-console.log('case 3: `a + b + c`');
+console.log("case 3: `a + b + c`");
 minifyLen(100, genCode3);
 minifyLen(1000, genCode3);
 minifyLen(2000, genCode3);
 minifyLen(3000, genCode3);
 minifyLen(5000, genCode3);
 minifyLen(10000, genCode3);
-console.log('case 4: `${a}${b}${c}`');
+console.log("case 4: `${a}${b}${c}`");
 minifyLen(100, genCode4);
 minifyLen(1000, genCode4);
 minifyLen(2000, genCode4);
