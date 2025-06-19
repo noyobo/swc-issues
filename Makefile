@@ -10,3 +10,7 @@ test:
 	node ./build4.js
 	@echo "============================="
 	node ./esbuild.js
+
+test-2:
+	npx swc --version
+	node ./build2.js
