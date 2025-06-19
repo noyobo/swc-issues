@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "@swc/core": "latest",
+    "@swc/cli": "latest",
     "esbuild": "^0.25.5"
   }
 }
