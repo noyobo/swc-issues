@@ -3,7 +3,7 @@ import { transformSync } from "@swc/core";
 function genCode2(len) {
   return `
     export function add() {
-      return ${'"a" + "hello swc, minify" + '.repeat(len)} 'c'
+      return ${'"a" + "hello swc, minify" + '.repeat(len)} "c"
     }
   `;
 }
@@ -37,3 +37,6 @@ minifyLen(100, genCode2);
 minifyLen(1000, genCode2);
 minifyLen(2000, genCode2);
 minifyLen(3000, genCode2);
+minifyLen(4000, genCode2);
+minifyLen(5000, genCode2);
+minifyLen(10000, genCode2);

@@ -3,7 +3,7 @@ import { buildSync } from "esbuild";
 function genCode(len) {
   return `
     export function add(a) {
-      return ${'a + "hello esbuild, minify" + '.repeat(len)} 'c';
+      return ${'a + "hello esbuild, minify" + '.repeat(len)} "c";
     }
   `;
 }
@@ -11,7 +11,7 @@ function genCode(len) {
 function genCode2(len) {
   return `
     export function add() {
-      return ${'"a" + "hello swc, minify" + '.repeat(len)} 'c'
+      return ${'"a" + "hello swc, minify" + '.repeat(len)} "c"
     }
   `;
 }
@@ -45,20 +45,21 @@ function minifyLen(len, fn) {
   }
 }
 
+console.log('case 1: `a + "hello esbuild, minify" + "c"`');
 minifyLen(100, genCode);
 minifyLen(1000, genCode);
 minifyLen(2000, genCode);
 minifyLen(3000, genCode);
 minifyLen(5000, genCode);
 minifyLen(10000, genCode);
-console.log();
+console.log('case 2: `"a" + "hello swc, minify" + "c"`');
 minifyLen(100, genCode2);
 minifyLen(1000, genCode2);
 minifyLen(2000, genCode2);
 minifyLen(3000, genCode2);
 minifyLen(5000, genCode2);
 minifyLen(10000, genCode2);
-console.log();
+console.log('case 3: `a + b + c`');
 minifyLen(100, genCode3);
 minifyLen(1000, genCode3);
 minifyLen(2000, genCode3);
