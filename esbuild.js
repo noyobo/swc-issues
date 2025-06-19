@@ -24,6 +24,15 @@ function genCode3(len) {
   `;
 }
 
+function genCode4(len) {
+  const code = "${a}${b}${c}"
+  return `
+    export function add(a, b, c) {
+      return \`${code.repeat(len)}\`;
+    }
+  `;
+}
+
 function minifyLen(len, fn) {
   try {
     const start = Date.now();
@@ -66,3 +75,10 @@ minifyLen(2000, genCode3);
 minifyLen(3000, genCode3);
 minifyLen(5000, genCode3);
 minifyLen(10000, genCode3);
+console.log('case 4: `${a}${b}${c}`');
+minifyLen(100, genCode4);
+minifyLen(1000, genCode4);
+minifyLen(2000, genCode4);
+minifyLen(3000, genCode4);
+minifyLen(5000, genCode4);
+minifyLen(10000, genCode4);
